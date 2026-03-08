@@ -21,7 +21,7 @@ import time
 import pandas as pd
 import streamlit as st
 
-from agentic_energy.schemas import (
+from schemas import (
 
     BatteryParams,
     DayInputs,
