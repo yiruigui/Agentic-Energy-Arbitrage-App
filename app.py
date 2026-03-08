@@ -38,9 +38,11 @@ def _install_agentics():
 _install_agentics()
 
 # Fix path BEFORE any local imports
+
 BASE = os.path.dirname(os.path.abspath(__file__))
+INNER = os.path.join(BASE, "agentic_energy")  # points to the outer folder
+sys.path.insert(0, INNER)  # now "agentic_energy" package is findable inside here
 sys.path.insert(0, BASE)
-sys.path.insert(0, os.path.join(BASE, "agentic_energy"))
 
 import datetime
 from typing import List, Optional
