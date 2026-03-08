@@ -520,3 +520,13 @@ with col_results:
             "No optimization run yet. Ask me to *generate schedules for tomorrow* "
             "to start the agentic pipeline using real Italy data and visualization MCP."
         )
+
+  
+        st.markdown("### 🏗️ System Architecture")
+        st.image("plots/EnArb_SeqFlowAgentic.png", use_container_width=True)
+    
+        st.markdown("### 📊 Example Battery Schedule")
+        if os.path.exists("plots/daily_battery_schedule.gif"):
+            st.image("plots/daily_battery_schedule.gif", use_container_width=True)
+        if os.path.exists("plots/daily_battery_schedule.gif.gif"):
+            st.image("plots/daily_battery_schedule.gif.gif", use_container_width=True)
