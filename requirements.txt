@@ -1,4 +1,4 @@
-agentic-energy==0.1.0
+
 agentics-py==0.0.0.post179.dev0+d271070
 aiofile==3.9.0
 aiohappyeyeballs==2.6.1
