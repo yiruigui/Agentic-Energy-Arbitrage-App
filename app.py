@@ -19,8 +19,29 @@ def _install_agentics():
 
 _install_agentics()
 
-
+import subprocess, sys
 import os
+
+def _install_agentics():
+    try:
+        import agentics
+    except ImportError:
+        subprocess.run(
+            [sys.executable, "-m", "pip", "install", "litellm>=1.64.0", "dspy>=3.0.3", "--quiet"],
+            check=True
+        )
+        subprocess.run(
+            [sys.executable, "-m", "pip", "install", "agentics==0.2.2", "--no-deps", "--quiet"],
+            check=True
+        )
+
+_install_agentics()
+
+# Fix path BEFORE any local imports
+BASE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE)
+sys.path.insert(0, os.path.join(BASE, "agentic_energy"))
+
 import datetime
 from typing import List, Optional
 import time
@@ -28,6 +49,7 @@ import pandas as pd
 import streamlit as st
 
 from agentic_energy.schemas import (
+
     BatteryParams,
     DayInputs,
     SolveRequest,
