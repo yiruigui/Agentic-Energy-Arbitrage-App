@@ -13,3 +13,10 @@ torch==2.4.1
 #cool way of generating requirements.txt
 #pip install pipreqs
 # pipreqs agentic_energy --force
+
+
+streamlit
+gurobipy
+crewai
+langchain-google-genai
+pysqlite3-binary
