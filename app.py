@@ -1,41 +1,10 @@
 # agentic_energy_app/app.py
 
-import subprocess, sys
 
-def _install_agentics():
-    try:
-        import agentics
-    except ImportError:
-        # Install dspy and litellm first at versions agentics needs
-        subprocess.run(
-            [sys.executable, "-m", "pip", "install", "litellm>=1.64.0", "dspy>=3.0.3", "--quiet"],
-            check=True
-        )
-        # Then install agentics without deps to avoid json-repair conflict with crewai
-        subprocess.run(
-            [sys.executable, "-m", "pip", "install", "agentics==0.2.2", "--no-deps", "--quiet"],
-            check=True
-        )
-
-_install_agentics()
 
 import subprocess, sys
 import os
 
-def _install_agentics():
-    try:
-        import agentics
-    except ImportError:
-        subprocess.run(
-            [sys.executable, "-m", "pip", "install", "litellm>=1.64.0", "dspy>=3.0.3", "--quiet"],
-            check=True
-        )
-        subprocess.run(
-            [sys.executable, "-m", "pip", "install", "agentics==0.2.2", "--no-deps", "--quiet"],
-            check=True
-        )
-
-_install_agentics()
 
 # Fix path BEFORE any local imports
 
