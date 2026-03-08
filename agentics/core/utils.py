@@ -33,7 +33,11 @@ from rich.progress import (
     TimeElapsedColumn,
     TimeRemainingColumn,
 )
-from numerize.numerize import numerize
+
+try:
+    from numerize.numerize import numerize
+except (ImportError, ModuleNotFoundError):
+    from numerize import numerize
 
 load_dotenv()
 
