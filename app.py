@@ -1,17 +1,19 @@
-# agentic_energy_app/app.py
 
 
-
-import subprocess, sys
 import os
+import sys
+
+# Get the path where app.py is
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Point specifically to the folder containing the package
+# Based on your description, the package is in BASE_DIR/agentic_energy
+PACKAGE_ROOT = os.path.join(BASE_DIR, "agentic_energy")
+
+sys.path.append(BASE_DIR)
+sys.path.append(PACKAGE_ROOT)
 
 
-# Fix path BEFORE any local imports
-
-BASE = os.path.dirname(os.path.abspath(__file__))
-INNER = os.path.join(BASE, "agentic_energy")  # points to the outer folder
-sys.path.insert(0, INNER)  # now "agentic_energy" package is findable inside here
-sys.path.insert(0, BASE)
 
 import datetime
 from typing import List, Optional
