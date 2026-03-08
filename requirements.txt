@@ -1,7 +1,6 @@
 crewai==1.10.1
 crewai-tools==1.10.1
-dspy>=3.0.3
-litellm>=1.64.0
+
 pydantic>=2.11.9,<2.12
 pydantic-settings==2.10.1
 mcp==1.26.0
