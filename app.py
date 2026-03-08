@@ -1,19 +1,21 @@
 
 
+
 import os
 import sys
 
-# Get the path where app.py is
+# Get the absolute path of the directory containing app.py
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Point specifically to the folder containing the package
-# Based on your description, the package is in BASE_DIR/agentic_energy
+# Insert BASE_DIR at the beginning of the path so 'import agentic_energy' works
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
+# Also add the inner folder just in case
 PACKAGE_ROOT = os.path.join(BASE_DIR, "agentic_energy")
-
-sys.path.append(BASE_DIR)
-sys.path.append(PACKAGE_ROOT)
-
-
+if PACKAGE_ROOT not in sys.path:
+    sys.path.insert(0, PACKAGE_ROOT)
+    
 
 import datetime
 from typing import List, Optional
@@ -21,7 +23,7 @@ import time
 import pandas as pd
 import streamlit as st
 
-from schemas import (
+from agentic_energy.schemas import (
 
     BatteryParams,
     DayInputs,
