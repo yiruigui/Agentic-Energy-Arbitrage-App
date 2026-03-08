@@ -44,10 +44,6 @@ from agentic_energy.mcp_clients import (
 from agentic_energy.data_utils import run_forecast_step
 from agentic_energy.llm_intent import ChatIntent, classify_intent, answer_generic_qa
 
-import sys
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 # ---------- Streamlit page config ----------
 
 st.set_page_config(
